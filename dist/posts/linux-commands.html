@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux 常用命令速查 - My Blog</title>
+  <link rel="stylesheet" href="../assets/main-DzdPVh1a.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <header>
+    <div class="container-wide">
+      <a href="../index.html" class="logo">My Blog</a>
+      <div class="nav-right">
+        <nav>
+          <a href="../index.html">首页</a>
+          <a href="../archive.html">归档</a>
+          <a href="../projects.html">项目</a>
+          <a href="../about.html">关于</a>
+          <a href="../contact.html">联系</a>
+        </nav>
+        <div class="search-wrap">
+          <span class="icon">&#x1F50D;</span>
+          <input type="text" id="search-input" placeholder="搜索文章..." autocomplete="off">
+        </div>
+        <button id="theme-toggle" aria-label="Switch theme">&#127769;</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <article class="post-full" id="post-content">
+        <h1>Linux 常用命令速查</h1>
+        <div class="post-meta">
+          <span class="date">&#x1F4C5; 2026-06-28</span>
+          <span class="tags"><span class="tag tech">技术</span><span class="tag tutorial">教程</span></span>
+        </div>
+        <div class="post-content"><p>日常开发高频使用的 Linux 命令。</p>
+<h2>文件操作</h2>
+<pre><code class="language-bash">ls -la              # 查看文件详情
+cp -r src/ dst/     # 递归复制
+mv file.txt /tmp/   # 移动/重命名
+rm -rf dir/         # 删除目录
+find . -name &quot;*.js&quot; # 查找文件
+</code></pre>
+<h2>文本处理</h2>
+<pre><code class="language-bash">grep -r &quot;keyword&quot; . # 递归搜索
+sed -i &#39;s/old/new/g&#39; file.txt  # 替换
+awk &#39;{print $1}&#39; file.txt      # 提取列
+</code></pre>
+<h2>进程管理</h2>
+<pre><code class="language-bash">ps aux               # 查看进程
+top                  # 实时监控
+kill -9 PID          # 强制终止
+nohup node app.js &amp;  # 后台运行
+</code></pre>
+<h2>网络</h2>
+<pre><code class="language-bash">curl -I https://example.com    # HTTP 头
+netstat -tlnp                  # 监听端口
+ssh user@host                  # 远程连接
+scp file.txt user@host:/tmp/   # 传文件
+</code></pre>
+<p>掌握这些命令，终端效率翻倍。</p>
+</div>
+      </article>
+    </div>
+  </main>
+  <button id="back-to-top" aria-label="Back to top">&#x2191;</button>
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="GitHub">&#x1F5A5;</a>
+        <a href="#" aria-label="Twitter">&#x1F426;</a>
+        <a href="#" aria-label="Email">&#x2709;</a>
+        <a href="#" aria-label="RSS">&#x1F4E1;</a>
+      </div>
+      <p>&copy; 2026 My Blog. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

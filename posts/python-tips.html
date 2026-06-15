@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python 实用技巧 10 则 - My Blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <header>
+    <div class="container-wide">
+      <a href="../index.html" class="logo">My Blog</a>
+      <div class="nav-right">
+        <nav>
+          <a href="../index.html">首页</a>
+          <a href="../archive.html">归档</a>
+          <a href="../projects.html">项目</a>
+          <a href="../about.html">关于</a>
+          <a href="../contact.html">联系</a>
+        </nav>
+        <div class="search-wrap">
+          <span class="icon">&#x1F50D;</span>
+          <input type="text" placeholder="搜索文章..." autocomplete="off">
+        </div>
+        <button id="theme-toggle" aria-label="Switch theme">&#127769;</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <article class="post-full">
+        <h1>Python 实用技巧 10 则</h1>
+        <div class="post-meta">
+          <span class="date">&#x1F4C5; 2026-06-06</span>
+          <span class="tags"><span class="tag tech">技术</span><span class="tag tutorial">教程</span></span>
+        </div>
+        <div class="post-content">
+          <p>在日常 Python 开发中，有一些小技巧能显著提高代码质量和开发效率。以下是 10 个我非常喜欢的技巧。</p>
+          <h2>1. 列表推导式</h2>
+<pre><code>squares = [i * i for i in range(10)]</code></pre>
+          <h2>2. 使用 enumerate 获取索引</h2>
+<pre><code>for i, fruit in enumerate(fruits, start=1):
+    print(f"{i}. {fruit}")</code></pre>
+          <h2>3. 字典的 get 方法</h2>
+<pre><code>count = data.get("key", 0)</code></pre>
+          <h2>4. 使用 zip 并行迭代</h2>
+<pre><code>for name, score in zip(names, scores):
+    print(f"{name}: {score}")</code></pre>
+          <h2>5. 上下文管理器</h2>
+<pre><code>with open("file.txt", "r") as f:
+    content = f.read()</code></pre>
+          <h2>6. f-string 格式化</h2>
+<pre><code>print(f"Pi is {3.14159:.2f}")</code></pre>
+          <h2>7. collections.Counter</h2>
+<pre><code>from collections import Counter
+count = Counter(["a", "b", "a", "c"])</code></pre>
+          <h2>8. 解包操作符</h2>
+<pre><code>first, *rest = [1, 2, 3, 4]</code></pre>
+          <h2>9. dataclass 装饰器</h2>
+<pre><code>from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: float
+    y: float</code></pre>
+          <h2>10. 类型提示</h2>
+<pre><code>def greet(name: str) -> str:
+    return f"Hello, {name}"</code></pre>
+          <blockquote>掌握这些小技巧，能让你的 Python 代码更简洁、更 Pythonic。</blockquote>
+        </div>
+        <div class="post-nav">
+          <a href="git-workflow.html">
+            <div class="nav-label">&#x2190; 上一篇</div>
+            <div class="nav-title">Git 工作流最佳实践</div>
+          </a>
+          <a href="../posts/css-grid.html">
+            <div class="nav-label">下一篇 &#x2192;</div>
+            <div class="nav-title">CSS Grid 布局指南</div>
+          </a>
+        </div>
+      </article>
+    </div>
+  </main>
+  <button id="back-to-top" aria-label="Back to top">&#x2191;</button>
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="GitHub">&#x1F5A5;</a>
+        <a href="#" aria-label="Twitter">&#x1F426;</a>
+        <a href="#" aria-label="Email">&#x2709;</a>
+        <a href="#" aria-label="RSS">&#x1F4E1;</a>
+      </div>
+      <p>&copy; 2026 My Blog. All rights reserved.</p>
+    </div>
+  </footer>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

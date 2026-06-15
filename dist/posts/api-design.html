@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESTful API 设计最佳实践 - My Blog</title>
+  <link rel="stylesheet" href="../assets/main-DzdPVh1a.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <header>
+    <div class="container-wide">
+      <a href="../index.html" class="logo">My Blog</a>
+      <div class="nav-right">
+        <nav>
+          <a href="../index.html">首页</a>
+          <a href="../archive.html">归档</a>
+          <a href="../projects.html">项目</a>
+          <a href="../about.html">关于</a>
+          <a href="../contact.html">联系</a>
+        </nav>
+        <div class="search-wrap">
+          <span class="icon">&#x1F50D;</span>
+          <input type="text" id="search-input" placeholder="搜索文章..." autocomplete="off">
+        </div>
+        <button id="theme-toggle" aria-label="Switch theme">&#127769;</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <article class="post-full" id="post-content">
+        <h1>RESTful API 设计最佳实践</h1>
+        <div class="post-meta">
+          <span class="date">&#x1F4C5; 2026-06-30</span>
+          <span class="tags"><span class="tag tech">技术</span><span class="tag tutorial">教程</span></span>
+        </div>
+        <div class="post-content"><p>设计良好的 API 是前后端协作的基础。</p>
+<h2>URL 设计</h2>
+<pre><code>GET    /api/users          # 列表
+POST   /api/users          # 创建
+GET    /api/users/:id      # 详情
+PUT    /api/users/:id      # 全量更新
+PATCH  /api/users/:id      # 部分更新
+DELETE /api/users/:id      # 删除
+</code></pre>
+<h2>命名规范</h2>
+<ul>
+<li>使用名词复数：<code>/users</code> 而非 <code>/user</code></li>
+<li>使用 kebab-case：<code>/blog-posts</code></li>
+<li>嵌套表示关联：<code>/users/:id/posts</code></li>
+<li>查询参数过滤：<code>?status=active&amp;page=1</code></li>
+</ul>
+<h2>响应格式</h2>
+<pre><code class="language-json">{
+  &quot;data&quot;: { ... },
+  &quot;meta&quot;: {
+    &quot;page&quot;: 1,
+    &quot;total&quot;: 100
+  },
+  &quot;error&quot;: null
+}
+</code></pre>
+<h2>状态码</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>成功</th>
+<th>失败</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET</td>
+<td>200</td>
+<td>404</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>201</td>
+<td>400</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>200</td>
+<td>404</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>204</td>
+<td>404</td>
+</tr>
+</tbody></table>
+<h2>版本管理</h2>
+<p>通过 URL 或 Header 管理版本：</p>
+<pre><code>/api/v1/users
+Accept: application/vnd.api+json;version=1
+</code></pre>
+<p>好的 API 设计让接口像文档一样清晰易读。</p>
+</div>
+      </article>
+    </div>
+  </main>
+  <button id="back-to-top" aria-label="Back to top">&#x2191;</button>
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="GitHub">&#x1F5A5;</a>
+        <a href="#" aria-label="Twitter">&#x1F426;</a>
+        <a href="#" aria-label="Email">&#x2709;</a>
+        <a href="#" aria-label="RSS">&#x1F4E1;</a>
+      </div>
+      <p>&copy; 2026 My Blog. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

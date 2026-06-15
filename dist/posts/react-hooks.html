@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Hooks 完全解析 - My Blog</title>
+  <link rel="stylesheet" href="../assets/main-DzdPVh1a.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <header>
+    <div class="container-wide">
+      <a href="../index.html" class="logo">My Blog</a>
+      <div class="nav-right">
+        <nav>
+          <a href="../index.html">首页</a>
+          <a href="../archive.html">归档</a>
+          <a href="../projects.html">项目</a>
+          <a href="../about.html">关于</a>
+          <a href="../contact.html">联系</a>
+        </nav>
+        <div class="search-wrap">
+          <span class="icon">&#x1F50D;</span>
+          <input type="text" id="search-input" placeholder="搜索文章..." autocomplete="off">
+        </div>
+        <button id="theme-toggle" aria-label="Switch theme">&#127769;</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <article class="post-full" id="post-content">
+        <h1>React Hooks 完全解析</h1>
+        <div class="post-meta">
+          <span class="date">&#x1F4C5; 2026-06-20</span>
+          <span class="tags"><span class="tag tech">技术</span><span class="tag tutorial">教程</span></span>
+        </div>
+        <div class="post-content"><p>React Hooks 自 16.8 发布以来，彻底改变了 React 组件的编写方式。</p>
+<h2>useState</h2>
+<pre><code class="language-jsx">const [count, setCount] = useState(0)
+const [user, setUser] = useState({ name: &#39;&#39;, age: 0 })
+</code></pre>
+<h2>useEffect</h2>
+<p>处理副作用：数据请求、订阅、DOM 操作。</p>
+<pre><code class="language-jsx">useEffect(() =&gt; {
+  fetch(&#39;/api/data&#39;).then(res =&gt; res.json()).then(setData)
+  return () =&gt; console.log(&#39;cleanup&#39;)
+}, [])
+</code></pre>
+<h2>useRef</h2>
+<p>保存可变值，不会触发重渲染。</p>
+<pre><code class="language-jsx">const inputRef = useRef(null)
+const intervalRef = useRef(null)
+</code></pre>
+<h2>自定义 Hook</h2>
+<pre><code class="language-jsx">function useWindowSize() {
+  const [size, setSize] = useState({ width: 0, height: 0 })
+  useEffect(() =&gt; {
+    const handler = () =&gt; setSize({ width: window.innerWidth, height: window.innerHeight })
+    window.addEventListener(&#39;resize&#39;, handler)
+    return () =&gt; window.removeEventListener(&#39;resize&#39;, handler)
+  }, [])
+  return size
+}
+</code></pre>
+<p>Hooks 让逻辑复用变得前所未有的简单。</p>
+</div>
+      </article>
+    </div>
+  </main>
+  <button id="back-to-top" aria-label="Back to top">&#x2191;</button>
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="GitHub">&#x1F5A5;</a>
+        <a href="#" aria-label="Twitter">&#x1F426;</a>
+        <a href="#" aria-label="Email">&#x2709;</a>
+        <a href="#" aria-label="RSS">&#x1F4E1;</a>
+      </div>
+      <p>&copy; 2026 My Blog. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

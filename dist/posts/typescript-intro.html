@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript 入门笔记 - My Blog</title>
+  <link rel="stylesheet" href="../assets/main-DzdPVh1a.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <header>
+    <div class="container-wide">
+      <a href="../index.html" class="logo">My Blog</a>
+      <div class="nav-right">
+        <nav>
+          <a href="../index.html">首页</a>
+          <a href="../archive.html">归档</a>
+          <a href="../projects.html">项目</a>
+          <a href="../about.html">关于</a>
+          <a href="../contact.html">联系</a>
+        </nav>
+        <div class="search-wrap">
+          <span class="icon">&#x1F50D;</span>
+          <input type="text" id="search-input" placeholder="搜索文章..." autocomplete="off">
+        </div>
+        <button id="theme-toggle" aria-label="Switch theme">&#127769;</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <article class="post-full" id="post-content">
+        <h1>TypeScript 入门笔记</h1>
+        <div class="post-meta">
+          <span class="date">&#x1F4C5; 2026-06-04</span>
+          <span class="tags"><span class="tag 技术">技术</span><span class="tag 笔记">笔记</span></span>
+        </div>
+        <div class="post-content"><p>TypeScript 是 JavaScript 的超集，为前端开发带来了类型安全和更好的开发体验。</p>
+<h2>基础类型</h2>
+<pre><code class="language-typescript">let name: string = &quot;TypeScript&quot;
+let age: number = 5
+let isAwesome: boolean = true
+let list: number[] = [1, 2, 3]
+let tuple: [string, number] = [&quot;hello&quot;, 42]
+</code></pre>
+<h2>接口</h2>
+<p>接口是 TypeScript 中定义对象形状的核心方式：</p>
+<pre><code class="language-typescript">interface User {
+  id: number
+  name: string
+  email: string
+  age?: number
+}
+
+const user: User = {
+  id: 1,
+  name: &quot;Alice&quot;,
+  email: &quot;alice@example.com&quot;
+}
+</code></pre>
+<h2>泛型</h2>
+<pre><code class="language-typescript">function identity&lt;T&gt;(arg: T): T {
+  return arg
+}
+
+const result = identity&lt;string&gt;(&quot;hello&quot;)
+</code></pre>
+<h2>类型别名与联合类型</h2>
+<pre><code class="language-typescript">type Status = &quot;idle&quot; | &quot;loading&quot; | &quot;success&quot; | &quot;error&quot;
+
+type ApiResponse&lt;T&gt; = {
+  data: T
+  status: Status
+  message?: string
+}
+</code></pre>
+<blockquote>
+<p>TypeScript 不仅能捕获运行时错误，还能作为优秀的代码文档。</p>
+</blockquote>
+</div>
+      </article>
+    </div>
+  </main>
+  <button id="back-to-top" aria-label="Back to top">&#x2191;</button>
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="GitHub">&#x1F5A5;</a>
+        <a href="#" aria-label="Twitter">&#x1F426;</a>
+        <a href="#" aria-label="Email">&#x2709;</a>
+        <a href="#" aria-label="RSS">&#x1F4E1;</a>
+      </div>
+      <p>&copy; 2026 My Blog. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
